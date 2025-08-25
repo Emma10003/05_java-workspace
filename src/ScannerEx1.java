@@ -73,6 +73,5 @@ public class ScannerEx1 {
 
         //              num1 num2 num3 word1 word2 word3
         System.out.printf("%d, %d, %f,  %s,   %s,   %s", num1, num2, num3, word1, word2, str);
-
     }
 }
