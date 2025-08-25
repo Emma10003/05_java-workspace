@@ -44,6 +44,9 @@ public class OperatorRun {
         System.out.println();
         op.method2();
         System.out.println();
-        op.method3();
+        op.method3(); // OperatorEx 내부에 존재하는 method3() 기능을
+                      // op 별칭으로 호출하여 사용
+        System.out.println();
+        op.method4();
     }
 }
