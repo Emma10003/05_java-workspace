@@ -1,3 +1,5 @@
+package edu.variable;
+
 public class VariableEx1 {
     public static void main(String[] args) {
         // 변수 : 메모리에 값을 저장하기 위한 공간의 명칭
