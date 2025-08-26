@@ -104,13 +104,13 @@ public class ArrayEx1 {
         // index는 length-1 한 값
         // index 0번부터 length-1번 까지만 추가할 것
         for (int i = 0; i < arr.length; i++){
-            System.out.print(i + "번째 인덱스");
+            System.out.print(i + "번째 인덱스 : ");
             arr[i] = sc.nextInt();
         }
         System.out.println("--- 배열에 추가된 값 확인 ---");
         // for문을 활용해서 배열에 추가된 숫자값 확인
         for (int i = 0; i < arr.length; i++){
-
+            System.out.println("arr[" + i + "] = " + arr[i]);
         }
     }
 }

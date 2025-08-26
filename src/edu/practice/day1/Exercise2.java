@@ -34,5 +34,10 @@ public class Exercise2 {
 
         System.out.println("=== 계산 결과 ===");
         System.out.printf("%d + %d = %d \n%d - %d = %d \n%d * %d = %d\n%d / %d = %.2f", num1, num2, add, num1, num2, sub, num1, num2, mul, num1, num2, div);
+        /*
+         Exception in thread "main" java.util.IllegalFormatConversionException: d != java.lang.Double
+         나누기 : %d 아니고 %.2f 사용
+         (문자열 포맷 형태 오류)
+         */
     }
 }

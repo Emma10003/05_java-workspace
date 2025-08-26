@@ -23,15 +23,20 @@ import java.util.Scanner;
  * 학점: B
  */
 public class Exercise4 {
+    
+    // 변수이름을 선언하거나 변수이름에 데이터를 넣는 것은
+    // 메서드 내부에 작성하지 않고
+    // 보통은 class 파일이름 바로 아래에 작성
+    Scanner sc = new Scanner(System.in);
+    int korean, english, math;
     public void exercise4() {
-        Scanner sc = new Scanner(System.in);
 
         System.out.print("국어 점수 : ");
-        int korean = sc.nextInt();
+        korean = sc.nextInt();
         System.out.print("영어 점수 : ");
-        int english = sc.nextInt();
+        english = sc.nextInt();
         System.out.print("수학 점수 : ");
-        int math = sc.nextInt();
+        math = sc.nextInt();
 
         double average = (korean + english + math) / 3.0;
 

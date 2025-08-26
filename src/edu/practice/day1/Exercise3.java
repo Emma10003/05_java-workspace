@@ -14,14 +14,16 @@ import java.util.Scanner;
  * 섭씨 25.5도는 화씨 77.9도입니다.
  */
 public class Exercise3 {
+    // 클래스에서 변수이름을 설정할 때 제외하고 모두 메서드 형태로 작성!
     public void exercise3() {
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("섭씨온도를 입력하세요 : ");
-        double celsius = sc.nextDouble();
         final double RATIO = 9.0 / 5.0; // 상수
         final int OFFSET = 32; // 상수
 
+        System.out.print("섭씨온도를 입력하세요 : ");
+        double celsius = sc.nextDouble();
+
+        // 추가문제
         double fahrenheit = celsius * RATIO + OFFSET;
 //        double fahrenheit = (celsius * 9 / 5 + 32);
 
