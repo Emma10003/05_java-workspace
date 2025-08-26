@@ -1,11 +1,11 @@
-package edu.control.loof;
+package edu.control.loop;
 
 import java.util.Scanner;
 
 /**
  * 루프 기능 설정용 클래스
  */
-public class LoofEx { // <html> 과 같이 페이지 내 코드 시작을 나타내는 구문
+public class LoopEx { // <html> 과 같이 페이지 내 코드 시작을 나타내는 구문
 
     /**
      * 1부터 10까지 출력하기 : for문
@@ -84,12 +84,15 @@ public class LoofEx { // <html> 과 같이 페이지 내 코드 시작을 나타
     public void method4() {
         Scanner sc = new Scanner(System.in);
         System.out.print("두 수를 입력하세요 : ");
-        int min =  sc.nextInt();
-        int max =  sc.nextInt();
+        int a =  sc.nextInt();
+        int b =  sc.nextInt();
+
+        int min = Math.min(a, b);
+        int max = Math.max(a, b);
 
         System.out.println("=========== 결과 ===========");
 
-        for (int i = Math.min(min, max); i <= Math.max(min, max); i++) {
+        for (int i = min; i <= max; i++) {
             System.out.println(i);
         }
     }
