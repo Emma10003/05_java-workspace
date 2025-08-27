@@ -9,12 +9,15 @@ public class PracticeRun {
         Practice5 obj5 = new Practice5();
         Practice6 obj6 = new Practice6();
         Practice7 obj7 = new Practice7();
+        Practice8 obj8 = new Practice8();
+        Practice9 obj9 = new Practice9();
+        Practice10 obj10 = new Practice10();
 
 //        obj1.method1();
 //        obj2.method1();
 //        obj3.method1();
 //        obj4.method1();
-        obj5.method1();
+//        obj5.method1();
 //        obj6.method1();
 //        obj7.method1();
         /** obj7.method1(); 출력 결과
@@ -26,6 +29,10 @@ public class PracticeRun {
          * 포함된 숫자 수 : 5
          * -> 공백, 마침표는 제외하고 센 숫자값
          */
+
+//        obj8.method1();
+//        obj9.method1();
+        obj10.method1();
 
     }
 }

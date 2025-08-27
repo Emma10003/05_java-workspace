@@ -47,16 +47,19 @@ public class Practice5 {
                     for(int i = 1; i <= 9; i++) {
                         System.out.printf("%d x %d = %d\n", dan, i, dan * i);
                     }
+                    continue;
                 case 2:
                     System.out.println("전체 구구단을 출력합니다.");
                     for (int i = 1; i <= 9; i++) {
-                        System.out.printf("=== %d단 ===", i);
+                        System.out.printf("=== %d단 ===\n", i);
                         for (int j = 1; j <= 9; j++) {
                             System.out.printf("%d x %d = %d\n", i, j, i*j);
                         }
                         System.out.println();
                     }
+                    // continue; -> 루프의 마지막 부분이라 불필요..
             }
+            if(menu == 0) break;
         }
 
     }
