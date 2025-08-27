@@ -26,6 +26,7 @@ public class Account {
 
     // 메서드(기능) - 기본생성자
     // c(클래스) 형태로 되어있는 edu.oop.basic.Account 를 선택해서 생성
+    // 기본생성자는 작성하지 않아도 자동으로 생성됨.
     public Account() {
     }
 
