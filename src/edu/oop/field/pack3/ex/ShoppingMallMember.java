@@ -23,6 +23,7 @@ public class ShoppingMallMember {
 
     // 초기화 블록  :  단일 변수보다 한 단계 늦게 시작
     {
+        // 객체마다 가지고 있는 변수, 객체마다 다른 데이터가 들어옴
         memberId = "guest123";
         memberName = "게스트";
         email = "guest@tjemail.com";
@@ -30,6 +31,7 @@ public class ShoppingMallMember {
     }
     // static 초기화 블록
     static {
+        // 클래스가 공통으로 가진 변수, 모든 객체가 동일한 데이터를 가짐
         totalMembercount = 0;
         dailyVisitorCount = 0;
         System.out.println("=== " + SHOPPING_MALL_NAME + " 시스템 시작 ===");
