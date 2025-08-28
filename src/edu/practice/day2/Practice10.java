@@ -20,40 +20,40 @@ import java.util.Scanner;
  */
 public class Practice10 {
     Scanner sc = new Scanner(System.in);
-    int[] lotto = new int[5];
+    int[] lotto = new int[6];
     int randomNum;
     boolean isDuplicate;
     String playAgain;
 
-    public void method1(){
+    public void method1() {
         System.out.println("=== 간단 로또 번호 생성기 ===");
-        while(true){
-            for (int i = 0; i < 5; i++){
-                // isDuplicate가 true 일 동안만 실행
-                do {
-                    randomNum = (int)(Math.random()*20) + 1;
+        while (true) {
+            for (int i = 0; i < lotto.length; i++) {
+                while (true) { // 중복 검사 확인
+                    randomNum = (int) (Math.random() * 45) + 1;
                     isDuplicate = false;
-
-                    for(int j = 0; j < i; j++){
-                        if(lotto[j] == randomNum){
-                            isDuplicate = true;
-                            break;
+                    for (int j = 0; j < i; j++) {
+                        if (lotto[j] == randomNum) {
+                            isDuplicate = true; // 랜덤번호가 기존 번호들이랑 동일하다면
+                            break; // 중복을 찾았으니 for문 탈출
                         }
                     }
-                } while(isDuplicate);
-
-                lotto[i] = randomNum;
+                    // 중복되지 않았다면 번호를 배열에 저장
+                    if (!isDuplicate) {
+                        lotto[i] = randomNum;
+                        break;
+                    }
+                }
+                // 생성된 번호 출력
                 System.out.print(lotto[i] + " ");
             }
 
             System.out.print("\n다시 생성하시겠습니까? (y/n) : ");
             playAgain = sc.next();
-            if (playAgain.equals("n")){
+            if (playAgain.equals("n")) {
                 System.out.println("프로그램을 종료합니다.");
                 break;
             }
         }
-
-
     }
 }

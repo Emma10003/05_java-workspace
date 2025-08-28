@@ -30,8 +30,9 @@ public class Practice8 {
     double average;
 
     public void method1(){
+        System.out.println("5명의 성적을 입력하세요.");
         for (int i = 0; i < scores.length; i++){
-            System.out.printf("%d번 학생: ", i+1);
+            System.out.printf("%d번 학생의 성적: ", i+1);
             scores[i] = sc.nextInt();
             total += scores[i];
         }

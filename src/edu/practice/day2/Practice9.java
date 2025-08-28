@@ -23,23 +23,29 @@ import java.util.Scanner;
 public class Practice9 {
     Scanner sc = new Scanner(System.in);
     int arraySize;
-    int[] numbers;
-    int[] numbersReverse;
+    int[] numbers;          // 원본배열
+    int[] numbersReverse;   // 뒤집힌 배열
 
     public void method1(){
         System.out.print("배열 크기를 입력하세요 (1~10): ");
         arraySize = sc.nextInt();
+        // 배열 크기 제한
+        if(arraySize < 1 || arraySize > 10){
+            System.out.println("1~10 사이의 숫자를 입력하세요: ");
+            return;
+        }
         numbers = new int[arraySize];
         numbersReverse = new int[arraySize];
 
+        // 원본배열 입력받기
         for (int i = 0; i < arraySize; i++) {
             System.out.printf("%d번째 숫자: ", i+1);
             numbers[i] = sc.nextInt();
+            // 배열 뒤집기
             numbersReverse[arraySize-i-1] = numbers[i];
         }
 
-        System.out.println();
-        System.out.println("원본 배열: " + Arrays.toString(numbers));
+        System.out.println("\n원본 배열: " + Arrays.toString(numbers));
         System.out.println("뒤집힌 배열: " +  Arrays.toString(numbersReverse));
 
     }
