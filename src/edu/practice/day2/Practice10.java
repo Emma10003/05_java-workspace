@@ -29,15 +29,20 @@ public class Practice10 {
         System.out.println("=== 간단 로또 번호 생성기 ===");
         while(true){
             for (int i = 0; i < 5; i++){
-                randomNum = (int)(Math.random()*20) + 1;
-                lotto[i] = randomNum;
-                // 중복 제거
-                if(i > 0){
-                    if(lotto[i] == lotto[i-1]){
-                        isDuplicate = true;
-                        i--;
+                // isDuplicate가 true 일 동안만 실행
+                do {
+                    randomNum = (int)(Math.random()*20) + 1;
+                    isDuplicate = false;
+
+                    for(int j = 0; j < i; j++){
+                        if(lotto[j] == randomNum){
+                            isDuplicate = true;
+                            break;
+                        }
                     }
-                }
+                } while(isDuplicate);
+
+                lotto[i] = randomNum;
                 System.out.print(lotto[i] + " ");
             }
 
