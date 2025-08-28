@@ -25,6 +25,7 @@ public class Practice2 {
     public void method1(){
         System.out.print("높이를 입력하세요 :");
         height = sc.nextInt();
+        System.out.println(); // nextInt 남은 버퍼 처리
 
         for(int i = 1; i <= height; i++) {
             for(int j = 1; j <= i; j++){
