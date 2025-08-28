@@ -40,12 +40,13 @@ public class Practice5 {
             switch(menu){
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
-                    break;
+                    return; // while 구문 탈출해서 기능 중지
                 case 1:
                     System.out.print("몇 단을 출력하시겠습니까? ");
                     dan = sc.nextInt();
+                    System.out.println("[ " + dan + "단 ]");
                     for(int i = 1; i <= 9; i++) {
-                        System.out.printf("%d x %d = %d\n", dan, i, dan * i);
+                        System.out.printf("%d x %d = %2d\n", dan, i, dan * i);
                     }
                     continue;
                 case 2:
@@ -57,9 +58,10 @@ public class Practice5 {
                         }
                         System.out.println();
                     }
-                    // continue; -> 루프의 마지막 부분이라 불필요..
+                    break;
+                default:
+                    System.out.println("잘못된 선택입니다. 다시 선택해주세요.");
             }
-            if(menu == 0) break;
         }
 
     }

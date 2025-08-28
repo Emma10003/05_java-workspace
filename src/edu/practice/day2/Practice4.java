@@ -24,15 +24,20 @@ public class Practice4 {
         boolean isPrime = true;
 
         for (int i = 2; i < number; i++) {
-            if (number % i == 0){
+            if(number < 2){
                 isPrime = false;
-                System.out.printf("%d는 소수가 아닙니다.", number);
-                break;
+            } else {
+                if (number % i == 0){
+                    isPrime = false;
+                    break;
+                }
             }
         }
 
         if (isPrime) {
             System.out.printf("%d는 소수입니다.", number);
+        } else {
+            System.out.printf("%d는 소수가 아닙니다.", number);
         }
 
     }
