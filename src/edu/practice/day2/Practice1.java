@@ -36,6 +36,7 @@ public class Practice1 {
                 System.out.print(i + " ");
             }
         }
+        System.out.println(); // int Enter 처리
 
     }
 }
