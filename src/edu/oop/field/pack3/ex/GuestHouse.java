@@ -32,11 +32,29 @@ public class GuestHouse {
     }
 
     // static 초기화 블럭
-    // -> 최초 1회만 읽음
+    // -> static 최초 1회만 읽음
     static {
         totalCount = 0; // 시스템 시작 시 방문자 수 초기화
         System.out.println("=== " + GUESTHOUSE_NAME + " 시스템 시작 ===");
     }
+
+    /**
+     * 초기화 시
+     * 1순위로 초기화 : static 변수들이 먼저 초기화
+     * public static final String GUESTHOUSE_NAME = "서울 게스트하우스";
+     *
+     * 2순위로 초기화 : static {} 블록이 나중에 실행
+     * static {
+     *         totalCount = 0; // 시스템 시작 시 방문자 수 초기화
+     *         System.out.println("=== " + GUESTHOUSE_NAME + " 시스템 시작 ===");
+     *     }
+     *
+     * {} 블록 형태의 경우
+     *      여러 줄의 실행문을 포함해서 작성
+     *      복잡한 로직, 시스템 메세지 출력을 포함해야 할 경우에 사용
+     *      복잡한 로직이 필요하지 않고, 단순 값 할당만 진행할 경우에는
+     *      {} 형태를 작성할 필요가 없음
+     */
 
     // 생성자
     // 기본생성자 ::: 작성하지 않아도 자동으로 생성됨
