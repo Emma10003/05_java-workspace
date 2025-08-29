@@ -37,27 +37,77 @@ public class StudentService {
 7. HTML 역량 비교하기
 0. 프로그램 종료
                     """);
-            // java 언어로만 데이터 출력/저장을 확인할 때만 label 태그 대신 사용
-            System.out.print("메뉴 선택 : ");
-            input = sc.nextInt(); // <input type = number> 대신 사용
+            // java 언어로만 데이터 출력과 저장을 확인할 때만 label 태그 대신 사용
+            System.out.print("메뉴 선택 :");
+            input = sc.nextInt(); // input type = number 대신 사용
 
             switch(input){
                 case 1:
-                    System.out.println("학생을 등록할 변수를 선택하세요: ");
-                    System.out.print("1 = std1 / 2 = std2    : ");
+                    System.out.println("학생을 등록할 변수를 선택하세요.");
+                    System.out.print("1=std1 / 2=std2   :");
                     int select = sc.nextInt();
                     if(select == 1){
                         System.out.println("이미 학생이 등록되어 있는 번호입니다.");
                     } else {
-                        System.out.println("학생 등록을 시작합니다.");
-                        // 학생 등록을 위한 메서드 호출
+                        System.out.println("조회되는 학생의 정보가 존재하지 않습니다.");
+                        System.out.println("학생 등록을 시작하겠습니다.");
+                        std2 = createStudent();
                     }
-                case 0:
-                    System.out.println("프로그램을 종료합니다.");
-                    return;
-                default:
-                    System.out.println("잘못된 번호를 선택하셨습니다.");
+                    break;
+                case 2:
+                    System.out.println("학생 정보를 확인합니다.");
+                    System.out.println("학생 정보를 확인할 번호를 선택하세요.");
+                    System.out.print("1=std1 / 2=std2   :");
+                    select = sc.nextInt();
+                    if(select == 1) System.out.println( studentInform(std1));
+                        // 하나의 기능으로 작성하고 기능을  재사용 하는 방식으로 변경
+//                        System.out.println("학생이름 "  +  std1.getName());
+//                        System.out.println("학생학번 "  +  std1.getStudentNumber());
+//                        System.out.println("학생성별 "  +  std1.getGender());
+                    else  System.out.println( studentInform(std2));
+                    // html 화면 대신  System.out.print 출력 화면으로 데이터가 무사히 나오고 있는지 확인
+                    //studentInform(std2); -> html 연결 후에는 이와 같은 형태로 데이터 html 전달
+//                        System.out.println("학생이름 "  +  std2.getName());
+//                        System.out.println("학생학번 "  +  std2.getStudentNumber());
+//                        System.out.println("학생성별 "  +  std2.getGender());
+                    break;
+                case 0: System.out.println("프로그램을 종료합니다."); return;
+                default: System.out.println("잘못된 번호를 선택하셨습니다.");
             }
         }
+    }
+
+    private Student createStudent() {
+        System.out.print("이름 :" );
+        String createName = sc.next();
+        System.out.print("학번 :" );
+        String createNumber = sc.next();
+        System.out.print("성별(남/여) :" );
+        char createGender = sc.next().charAt(0);
+        // sc.next().charAt(0);  sc.next()로 입력받은 문자열 중에서
+        // 0 번째 인덱스 번째 문자 하나를 반환 받아 createGender 변수에 저장
+
+        return new Student(createName, createNumber, createGender);
+    }
+
+
+
+    /**
+     *  매개 변수로 전달 받은 학생의 정보를 문자열로 만들어서 반환
+     * @param 특정학생 : std1 또는 std2 변수명칭의 데이터가 들어올 자리    param = 파라미터 줄임말 = 매개변수
+     * @return 학생 정보가 작성된 문자열  // html 연결 후에는 ㅇㅇㅇ 주소로 이동시켜서 데이터 전달하겠다 와 같은역할
+     *
+     * private void studentInform(Student 특정학생){
+     */
+    private String studentInform(Student 특정학생){
+        // String.format("패턴",변수)
+        // - 패턴 모양의 문자열을 반환하는 String 메서드
+
+        // Student 클래스 모형으로 담겨져 있는 학생의 데이터가 존재하면 존재하는 값이 출력
+        // 존재하지 않으면 null 이나 숫자의 경우 0 의 형태로 출력
+
+        String a=        String.format("%s / %s / %c",
+                특정학생.getName(), 특정학생.getStudentNumber(), 특정학생.getGender());
+        return  a;
     }
 }
