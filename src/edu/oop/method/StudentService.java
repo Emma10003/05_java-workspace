@@ -51,8 +51,10 @@ public class StudentService {
                     } else {
                         System.out.println("조회되는 학생의 정보가 존재하지 않습니다.");
                         System.out.println("학생 등록을 시작하겠습니다.");
-                        // 여기 코드 확인하기
-                        std2 = createStudent();
+                        // 학생 등록을 위한 메서드 호출
+                        std2 = createStudent(); // return 으로 가져올 아래 생성자 객체 대신 메서드(기능명칭) 작성
+                        // std2 = new Student(createName, createNumber, createGender);
+                        studentInform(std2);
                     }
                     break;
                 case 2: // mypage.html
@@ -99,6 +101,28 @@ public class StudentService {
                         studentInform(std2);
                     }
                     break;
+                case 5: // 관리자 페이지 - HTML 역량 tab
+                    System.out.println("HTML 역량을 수정하는 공간입니다.");
+
+                    // html 기준 search - 검색하는 input 창, placeholder 로 검색어 입력 예시가 작성되어 있을 것
+                    System.out.println("HTML 역량을 수정할 학생 선택 (1=std1 / 2=std2)   :");
+                    select = sc.nextInt();
+                    if(select == 1) {
+                        updateHTML(std1);
+                        studentInform(std1); // 실제 html 에서는 새로고침과 같은 기능을 사용
+                    } else {
+                        updateHTML(std2);
+                        studentInform(std2);
+                    }
+                    break;
+                case 6:
+                    // Java 역량 비교에 대한 결과만 확인
+                    System.out.println(compareJava(std1, std2));
+                    break;
+                case 7:
+                    // HTML 역량 비교에 대한 결과만 확인
+                    System.out.println(compareHtml(std1, std2));
+                    break;
 
                 case 0: System.out.println("프로그램을 종료합니다."); return;
                 default: System.out.println("잘못된 번호를 선택하셨습니다.");
@@ -107,8 +131,8 @@ public class StudentService {
     }
 
     /**
-     *
-     * @return
+     * 학생 정보를 입력받아 생성된 Student 객체 반환
+     * @return 생성된 Student 객체 주소
      */
     private Student createStudent() {
         System.out.print("이름 :" );
@@ -121,6 +145,7 @@ public class StudentService {
         // 0 번째 인덱스 번째 문자 하나를 반환 받아 createGender 변수에 저장
 
         return new Student(createName, createNumber, createGender);
+        // Student std2 = new Student(createName, createNumber, createGender);
     }
 
 
@@ -188,6 +213,69 @@ public class StudentService {
 
         // result 를 setJava로 저장
         std.setJava(result);
+    }
 
+    /**
+     * HTML 역량이 얼마나 증가/감소했는지 정수로 입력받고
+     * 학생의 HTML 역량을 관리자가 수정
+     * 수정된 HTML 역량은 최대값, 최소값의 범위를 넘어가지 못하게 if문으로 설정
+     * @param std :  std1 또는 std2 학생의 정보가 담겨있는 상자의 위치
+     */
+    private void updateHTML(Student std){
+        System.out.print("증가 또는 감소한 HTML의 역량을 입력하세요: ");
+        int newHtml = sc.nextInt();
+        int result = std.getHtml() + newHtml;
+
+        while (result > Student.MAX_VALUE || result < Student.MIN_VALUE) {
+            System.out.println("점수는 " + Student.MIN_VALUE + " ~ " +  Student.MAX_VALUE + " 사이만 가능합니다.");
+            System.out.println("현재 점수: " + std.getHtml() + " / 최종결과: " + result);
+            System.out.println("다시 입력해주세요: ");
+            newHtml = sc.nextInt();
+            result = std.getHtml() + newHtml;
+        }
+
+        std.setHtml(result);
+    }
+
+    /**
+     * 매개변수로 전달받은 두 Student의 Java 점수 비교하기
+     * @param std1
+     * @param std2
+     * @return 비교 결과를 문자열로 확인
+     */
+    private String compareJava(Student std1, Student std2){
+
+        if(std1 == null || std2 == null) {
+            return "등록된 학생의 정보가 조회되지 않습니다.";
+        }
+        // 두 학생의 점수 비교
+        if(std1.getJava() == std2.getJava()) {
+            return "학생의 점수가 같습니다.";
+        } else if (std1.getJava() > std2.getJava()) {
+            return std1.getName() + "의 점수가 더 높습니다.";
+        } else {
+            return std2.getName() + "의 점수가 더 높습니다.";
+        }
+    }
+
+    /**
+     * 매개변수로 전달받은 두 Student의 HTML 점수 비교하기
+     * @param std1
+     * @param std2
+     * @return 비교 결과를 문자열로 확인
+     */
+    private String compareHtml(Student std1, Student std2){
+
+        if(std1 == null || std2 == null) {
+            return "등록된 학생의 정보가 조회되지 않습니다.";
+        }
+        // 두 학생의 점수 비교
+        if(std1.getHtml() == std2.getHtml()) {
+            return "학생의 점수가 같습니다.";
+        } else if (std1.getHtml() > std2.getHtml()) {
+            return std1.getName() + "의 점수가 더 높습니다.";
+        } else {
+            return std2.getName() + "의 점수가 더 높습니다.";
+        }
     }
 }
