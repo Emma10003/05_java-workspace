@@ -11,7 +11,7 @@ public class StudentService {
 
     /**
      * 메인 메뉴를 제공하는 화면 = html 대신 활용하고 있는 상황
-     * displayMenu 를 html 화면으로 데이터를 보낸다고 생각!
+     * displayMenu 메서드가 html 화면으로 데이터를 보내는 역할이라고 생각!
      */
     public void displayMenu(){
         int input; // Scanner로 입력받은 메뉴 번호를 저장할 변수, 기본값 = 0;
