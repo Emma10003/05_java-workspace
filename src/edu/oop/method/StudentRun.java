@@ -2,7 +2,6 @@ package edu.oop.method;
 
 public class StudentRun {
     public static void main(String[] args) {
-        // ss.displayMenu();
         // StudentService ss = new StudentService();
 
         // 생성된 StudentService 객체를
