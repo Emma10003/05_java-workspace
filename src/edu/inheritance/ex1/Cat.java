@@ -1,4 +1,4 @@
-package edu.inheritance.ex;
+package edu.inheritance.ex1;
 /*
 public class Cat extends Animal { // 이 줄에 빨간줄이 생기는 경우
     // 생성자를 만들어주지 않았기 때문에 빨간줄 에러 발생.
