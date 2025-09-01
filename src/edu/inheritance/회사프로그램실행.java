@@ -10,6 +10,8 @@ public class 회사프로그램실행 {
 
         디자이너 des1 = new 디자이너("박디자인", 3001, 3000000, "Design","Figma");
 
+        매니저 mgr1 = new 매니저("최매니저", 2001, 5000000, "개발1팀", 8, 50000);
+
         // dev1의 직원정보 출력
         dev1.info();
         dev1.work();
@@ -21,5 +23,9 @@ public class 회사프로그램실행 {
         // des1의 직원정보 출력
         des1.info();
         des1.work();
+        // mgr1의 직원정보 출력
+        mgr1.info();
+        mgr1.work();
+        mgr1.meeting();
     }
 }
