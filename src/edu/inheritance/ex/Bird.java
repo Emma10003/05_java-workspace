@@ -41,10 +41,14 @@ public class Bird extends Animal {
     public void makeSound() {
         System.out.println(getName() + "이(가) 짹짹 웁니다.");
     }
-
     @Override
     public void move() {
         System.out.println(getName() + "이(가) 날아다닙니다.");
+    }
+    @Override
+    public void showInfo(){
+        super.showInfo();
+        System.out.println("날개 길이: " + getWingspan());
     }
 
     // 고유 메서드 - Bird 에서만 사용할 수 있는 기능들

@@ -24,7 +24,8 @@ public class Cat extends Animal {
     }
 
     // getter, setter (isIndoor)
-    public boolean isIndoor() {
+    public boolean isIndoor() { // 앞에 is가 붙으면 get 생략.
+        // is와 get 둘 다 동사라서 is를 사용
         return isIndoor;
     }
 
@@ -45,12 +46,18 @@ public class Cat extends Animal {
         System.out.println(getName() + "이(가) 네 발로 조용히 걸어다닙니다.");
     }
 
+    @Override
+    public void showInfo(){
+        super.showInfo();
+        System.out.println("실내묘: " + isIndoor());
+    }
+
     // 고유 메서드 - Cat 클래스에서만 사용할 수 있는 기능들
     public void purr(){
         System.out.println(getName() + "이(가) 골골 소리를 냅니다!");
     }
 
     public void scratch(){
-
+        System.out.println(getName() + "이(가) 발톱으로 긁습니다.");
     }
 }

@@ -115,6 +115,9 @@ public class AnimalInheritanceRun {
 
         System.out.println("\n=== 정보 수정 후 ===");
         // 여기에 코드 작성
+        dog1.setAge(5);
+        dog1.setBreed("시바견");
+        dog1.showInfo();
 
 
         // ============== 문제 10: Super 키워드 이해 ==============

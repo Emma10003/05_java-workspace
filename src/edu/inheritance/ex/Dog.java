@@ -47,10 +47,14 @@ public class Dog extends Animal {
     public void makeSound() {
         System.out.println(getName() + "이(가) 멍멍 짖습니다.");
     }
-
     @Override
     public void move() {
         System.out.println(getName() + "이(가) 네 발로 뛰어다닙니다.");
+    }
+    @Override
+    public void showInfo(){
+        super.showInfo();
+        System.out.println("품종: " + getBreed());
     }
 
     // 고유 메서드 - Dog 클래스에서만 사용할 수 있는 기능 추가
