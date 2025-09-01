@@ -10,6 +10,9 @@ public class NaverService {
     protected String userNickname;  // 유저 닉네임
     protected int userLevel;        // 유저 등급
 
+    public NaverService() {
+    }
+
     public NaverService(String serviceName, String userId, String userNickname, int userLevel) {
         this.serviceName = serviceName;
         this.userId = userId;
@@ -31,6 +34,14 @@ public class NaverService {
 
     public void writeContent() {
         System.out.println("작성합니다.");
+    }
+
+    public void showUserInfo(){
+        System.out.println("=== 사용자 정보 ===");
+        System.out.println("이름: " + serviceName);
+        System.out.println("아이디: " + userId);
+        System.out.println("닉네임: " + userNickname);
+        System.out.println("등급: " + userLevel);
     }
 
     public String getServiceName() { return serviceName; }
