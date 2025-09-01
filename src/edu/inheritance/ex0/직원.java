@@ -1,4 +1,4 @@
-package edu.inheritance;
+package edu.inheritance.ex0;
 
 public class 직원 {
     // 필드 (= 속성, 인스턴스 변수)
