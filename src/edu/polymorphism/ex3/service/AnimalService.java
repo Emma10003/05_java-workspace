@@ -1,5 +1,6 @@
 package edu.polymorphism.ex3.service;
 
+// "edu.polymorphism.ex3.model 폴더 안에 있는 모든 문서를 참조하겠다"
 import edu.polymorphism.ex3.model.*;
 
 public class AnimalService {
@@ -20,7 +21,7 @@ public class AnimalService {
             animal.move();
             animal.doSpecialAction();
             animal.eat();
-            animal.toString();
+            System.out.println(animal.toString());
         }
 /*
         // 개

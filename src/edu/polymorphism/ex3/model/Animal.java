@@ -50,12 +50,11 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
+        return "Animal " +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", color='" + color + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+                ", type='" + type + '\'';
     }
 
     // 개발자 정의 메서드
@@ -65,18 +64,18 @@ public class Animal {
     // 상속받은 자식 클래스가 정상적으로 작동함.
     // 상속을 받을 때 필수로 해야하는 기능에 대해 설정하는 방법을 배울 예정
     public void makeSound() {
-        System.out.println(getName() + "이(가) 멍멍 짖습니다.");
+
     }
 
     public void move(){
-        System.out.println(getName() + "이(가) 사뿐사뿐 걸어갑니다.");
+
     }
 
     public void doSpecialAction() {
-        System.out.println(getName() + "이(가) 스크래처를 긁습니다.");
+
     }
 
     public void eat(){
-        System.out.println(getName() + "이(가) 밥을 먹습니다.");
+
     }
 }

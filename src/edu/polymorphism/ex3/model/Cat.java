@@ -51,6 +51,14 @@ public class Cat extends Animal {
 
     @Override
     public void doSpecialAction() {
-        System.out.println(getName() + "이(가) 스크래처를 긁습니다.");
+        System.out.println(getName() + "이(가) 그루밍을 합니다.");
+        if (getLivesLeft() > 0) {
+            System.out.println("남은 목숨: " + getLivesLeft() + "개");
+        }
+    }
+
+    @Override
+    public void eat() {
+        System.out.println(getName() + "이(가) 참치캔을 먹습니다.");
     }
 }
