@@ -1,4 +1,4 @@
-package edu.polymorphism.ex1;
+package edu.polymorphism.ex1.model;
 // @생성자 @파라미터생성자 @게터 @세터 @toString -> 모두 어노테이션으로 추후 생성할 것!
 public class Food extends Product{
     // 식품 관련 필드들
@@ -16,10 +16,11 @@ public class Food extends Product{
     }
 
     public Food(String productName, String productId, double productPrice,
-                String productCategory, int productStock, String productDescription,
+                int productStock, String productDescription,
                 String productBrand, double productWeight, String expirationDate,
                 String origin, boolean isOrganic) {
-        super(productName, productId, productPrice, productCategory, productStock, productDescription, productBrand, productWeight);
+        super(productName, productId, productPrice, "음식", productStock, productDescription, productBrand, productWeight);
+        // Food("사과",    "APPLE001", 5000.0,                             100,           "국산 사과",        "농협",       1.0, "2025-09-15", "한국", true);
         this.expirationDate = expirationDate;
         this.origin = origin;
         this.isOrganic = isOrganic;

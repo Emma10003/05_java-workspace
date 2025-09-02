@@ -1,4 +1,4 @@
-package edu.polymorphism.ex1;
+package edu.polymorphism.ex1.model;
 
 public class Electronics extends Product{
     // 전자제품 관련 필드들
@@ -16,11 +16,11 @@ public class Electronics extends Product{
                        String productBrand, double productWeight) {
         super(productName, productId, productPrice, productCategory, productStock, productDescription, productBrand, productWeight);
     }
-
     public Electronics(String productName, String productId, double productPrice,
-                       String productCategory, int productStock, String productDescription,
+                       int productStock, String productDescription,
                        String productBrand, double productWeight, int warranty, String powerConsumption) {
-        super(productName, productId, productPrice, productCategory, productStock, productDescription, productBrand, productWeight);
+        super(productName, productId, productPrice, "전자제품", productStock, productDescription, productBrand, productWeight);
+        // 생성자 'Electronics(String, String, double, int, String, String, double, int, String)'을(를) 해결할 수 없습니다
         this.warranty = warranty;
         this.powerConsumption = powerConsumption;
     }

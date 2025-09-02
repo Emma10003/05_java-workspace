@@ -1,4 +1,4 @@
-package edu.polymorphism.ex1;
+package edu.polymorphism.ex1.model;
 
 public class 더조은회사AllInOne {
 
