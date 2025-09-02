@@ -17,26 +17,6 @@ public class 나쁜학교AllInOne {
     private boolean isBookCheckedOut; // 대출 여부
     private String checkoutUser; // 대출한 사용자
 
-
-    // 학생 관련 메서드들
-    public void displayStudentInfo() {
-        System.out.println("학생 이름: " + studentName);
-        System.out.println("학번: " + studentId);
-        System.out.println("전공: " + studentMajor);
-    }
-
-    public void promoteStudent() {
-        this.studentGrade++;
-        System.out.println(studentName + " 학생이 " + studentGrade + "학년으로 진급했습니다.");
-    }
-
-    // 교수 관련 메서드들
-    public void displayProfessorInfo() {
-        System.out.println("교수 이름: " + professorName);
-        System.out.println("교번: " + professorId);
-        System.out.println("소속 학과: " + professorDepartment);
-    }
-
     // 강의 관련 메서드들
     public void openCourse() {
         System.out.println("강의 [" + courseName + "]가 개설되었습니다. (최대 " + maxEnrollment + "명)");
