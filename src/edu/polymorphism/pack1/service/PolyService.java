@@ -23,9 +23,11 @@ public class PolyService {
 
     // SmartPhone과 Iphone, Galaxy는 Java가 아는 형태가 아니라 개발자가 만들어놓은 형태이므로 형변환이 어려움.
     //  ? 상자      ? 상자  ? 상자
-    Iphone iphone3 = (Iphone) new SmartPhone(); // 마찬가지로 형변환해서 사용하면 가능하나, 데이터가 변경되며 손실이 발생할 수 있음.
+    // Iphone iphone3 = (Iphone) new SmartPhone(); // 마찬가지로 형변환해서 사용하면 가능하나, 데이터가 변경되며 손실이 발생할 수 있음.
     // 현재 코드에서는 문제가 일어나지 않지만, 코드를 실행하면 ClassCastException('클래스가 일치하지 않습니다') 라는 에러 발생
     //  -> 데이터 변환 시 데이터가 손실되어 문제가 발생한다는 에러.
+        // Exception in thread "main" java.lang.ClassCastException: class edu.polymorphism.pack1.model.SmartPhone cannot be cast to class edu.polymorphism.pack1.model.Iphone (edu.polymorphism.pack1.model.SmartPhone and edu.polymorphism.pack1.model.Iphone are in unnamed module of loader 'app')
+        // at edu.polymorphism.pack1.service.PolyService.<init>(PolyService.java:26)
     // SmartPhone 을 상속받는 Galaxy와 같은 데이터가 잘못 들어올 수 있기 때문에
     // 부모 변수명 = new 자식(); 은 가능하나
     // 자식 변수명 = new 부모(); 는 불가능 -> 부모가 Galaxy를 참조해서 사용할 수 있기 때문.
@@ -50,7 +52,7 @@ public class PolyService {
         SmartPhone 스마트폰2대 = new SmartPhone();
         SmartPhone 스마트폰3대 = new SmartPhone();
 
-        SmartPhone[] 스마트폰공장 = new SmartPhone[4]; // 스마트폰 4대에 대한 정보를 sps 라는 공간에 한 번에 넣어줄 수 있다.
+        SmartPhone[] 스마트폰공장 = new SmartPhone[3]; // 스마트폰 4대에 대한 정보를 sps 라는 공간에 한 번에 넣어줄 수 있다.
         스마트폰공장[0] = 스마트폰1대;  // 각각의 스마트폰 공장에 스마트폰 1대에 대한 정보를 저장
         스마트폰공장[1] = 스마트폰2대;
         스마트폰공장[2] = 스마트폰3대;
@@ -58,6 +60,16 @@ public class PolyService {
         스마트폰공장[0].setDisplay("아이폰 14 디스플레이");  // 와 같은 형식으로 작성
         스마트폰공장[1].setDisplay("갤럭시 S23 디스플레이");
         스마트폰공장[2].setDisplay("파이폰 디스플레이");
+        /*
+        SmartPhone[] 스마트폰공장 = new SmartPhone[4]; // 스마트폰 4대에 대한 정보를 sps 라는 공간에 한 번에 넣어줄 수 있다.
+        스마트폰공장[0] = 스마트폰1대;  // 각각의 스마트폰 공장에 스마트폰 1대에 대한 정보를 저장
+        스마트폰공장[1] = 스마트폰2대;
+        스마트폰공장[1] = 스마트폰3대; // 스마트폰공장[2]에 대한 객체 정보가 존재하지 않아 에러 발생 (NullPointerException)
+        
+        스마트폰공장[0].setDisplay("아이폰 14 디스플레이");  // 와 같은 형식으로 작성
+        스마트폰공장[1].setDisplay("갤럭시 S23 디스플레이");
+        스마트폰공장[2].setDisplay("파이폰 디스플레이");
+         */
 
         // 스마트폰 공장 내에 존재하는 스마트폰들의 정보를 for문을 활용해 모두 출력
         for(SmartPhone 기기확인 :스마트폰공장) {

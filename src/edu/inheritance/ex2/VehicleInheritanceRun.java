@@ -40,15 +40,25 @@ public class VehicleInheritanceRun {
         Bicycle bike2 = new Bicycle("자이언트", "이스케이프", 2023, "빨간색",
                 21, true);
 
+        // 다형성을 활용해서 한 번에 출력
+        // 변수이름 : vehicles 배열형태
+        // 배열 출력 for문 내 변수이름 : info
+
         // ============== 문제 4: 교통수단 정보 출력 ==============
         // 모든 교통수단의 기본 정보를 showInfo() 메소드로 출력하세요.
+        Vehicle[] vehicles = {car1, motorcycle1, bike1, bike2}; // 배열 객체 생성
 
-        System.out.println("=== 교통수단 정보 ===");
-        // 여기에 코드 작성
-        car1.showInfo();
-        motorcycle1.showInfo();
-        bike1.showInfo();
-        bike2.showInfo();
+        for(Vehicle info : vehicles) {
+            System.out.println("=== 교통수단 정보 ===");
+            info.showInfo();
+        }
+
+        // System.out.println("=== 교통수단 정보 ===");
+        // // 여기에 코드 작성
+        // car1.showInfo();
+        // motorcycle1.showInfo();
+        // bike1.showInfo();
+        // bike2.showInfo();
 
         // ============== 문제 5: 공통 행동 테스트 ==============
         // 모든 교통수단이 시동을 걸고 정지하는 행동을 해보세요. (start, stop 메소드)
