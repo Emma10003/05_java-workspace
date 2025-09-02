@@ -38,6 +38,27 @@ public class AnimalInheritanceRun {
         Bird bird1 = new Bird("짹짹이", 1, "노란색");
         Bird bird2 = new Bird("파랑이", 2, "파란색", 25.5);
 
+        // 향상된 for문을 이용해 부모 클래스의 메서드 실행하기
+        //                   0     1      2      3
+        Animal[] animals = {dog1, cat1, bird1, bird2};
+
+        // Animal 클래스 내부에 작성된 필드, 메서드(기능)만 호출 및 출력 가능.
+        // Animal animal -> 자료형이 Animal 인 객체 animal을 생성한 것?
+        // 그럼 for문의 조건문은 곧 Animal animal = new Dog(); new Cat(); 이걸 반복 1회마다 생성한다고 보면 되나
+        for (Animal animal : animals) {
+            // 예를 들어 animals 에서 0번째 인덱스인 dog1 내부에 작성된 데이터가 animal에 전달되면
+            // animal 에는 dog1에 작성된 데이터를 기반으로 출력됨.
+            // 출력될 때는 Animal 에 작성된 기능을 재사용하여 dog1에 맞게 수정된 기능의 내용이 출력됨.
+            // 하지만 animal에는 존재하지 않고, dog1에만 존재하는 기능은 출력할 수 없음.
+            // 왜냐하면 animal 틀 이외의 기능이기 때문!
+            animal.showInfo();
+            animal.eat();
+            animal.sleep();
+            animal.makeSound();
+            animal.move();
+        }
+
+/*
 
         // ============== 문제 4: 동물 정보 출력 ==============
         // 모든 동물의 기본 정보를 showInfo() 메소드로 출력하세요.
@@ -85,6 +106,7 @@ public class AnimalInheritanceRun {
         bird1.move();
         bird2.move();
 
+*/
 
         // ============== 문제 7: 각 동물의 고유 메소드 실행 ==============
         // 강아지: wagTail(), fetch()
