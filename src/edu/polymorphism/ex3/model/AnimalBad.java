@@ -1,66 +1,19 @@
+/*
 package edu.polymorphism.ex3.model;
+*/
 /*
 구현해야 할 클래스
 Animal
-│─
-│─
-└─
- */
+│─ Dog
+│─ Cat
+└─ Bird
+ *//*
+
 
 // 모든 동물을 하나의 클래스로 처리하는 나쁜 예시
 public class AnimalBad {
-    // 공통 필드
-    private String name;
-    private int age;
-    private String color;
-    private String type; // "개", "고양이", "새"
-
-    // 개 전용 필드들
-    private String breed; // 품종
-    private boolean isTrained; // 훈련 여부
-
-    // 고양이 전용 필드들
-    private int livesLeft; // 남은 목숨 (9개)
-    private boolean isIndoor; // 실내묘 여부
-
-    // 새 전용 필드들
-    private double wingSpan; // 날개 길이
-    private boolean canFly; // 비행 가능 여부
-
     // 기본 생성자
     public AnimalBad() {
-    }
-
-    // 매개변수 생성자 - 파라미터가 너무 많음
-    public AnimalBad(String name, int age, String color, String type) {
-        this.name = name;
-        this.age = age;
-        this.color = color;
-        this.type = type;
-
-        // 타입별로 초기화... 복잡함
-        if (type.equals("개")) {
-            this.breed = "믹스";
-            this.isTrained = false;
-            this.livesLeft = 0; // 사용 안 함
-            this.isIndoor = false; // 사용 안 함
-            this.wingSpan = 0.0; // 사용 안 함
-            this.canFly = false; // 사용 안 함
-        } else if (type.equals("고양이")) {
-            this.livesLeft = 9;
-            this.isIndoor = true;
-            this.breed = null; // 사용 안 함
-            this.isTrained = false; // 사용 안 함
-            this.wingSpan = 0.0; // 사용 안 함
-            this.canFly = false; // 사용 안 함
-        } else if (type.equals("새")) {
-            this.wingSpan = 30.0;
-            this.canFly = true;
-            this.breed = null; // 사용 안 함
-            this.isTrained = false; // 사용 안 함
-            this.livesLeft = 0; // 사용 안 함
-            this.isIndoor = false; // 사용 안 함
-        }
     }
 
     // 소리내기 - if-else 지옥
@@ -176,3 +129,4 @@ public class AnimalBad {
 
 
 }
+*/

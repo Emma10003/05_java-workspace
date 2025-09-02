@@ -1,12 +1,12 @@
 package edu.polymorphism.ex3.service;
 
-import edu.polymorphism.ex3.model.AnimalBad;
+import edu.polymorphism.ex3.model.*;
 
 public class AnimalService {
     public void display() {
-        Dog dog = new AnimalBad("멍멍이", 3, "갈색", "개");
-        Cat cat = new AnimalBad("야옹이", 2, "흰색", "고양이");
-        Bird bird = new AnimalBad("짹짹이", 1, "노란색", "새");
+        Dog dog = new Dog("멍멍이", 3, "갈색", "개");
+        Cat cat = new Cat("야옹이", 2, "흰색", "고양이");
+        Bird bird = new Bird("짹짹이", 1, "노란색", "새");
 
         System.out.println("=== 동물들의 행동 ===");
         /*
@@ -15,8 +15,14 @@ public class AnimalService {
         */
         Animal[] animals = {dog, cat, bird};
 
-
-
+        for(Animal animal : animals) {
+            animal.makeSound();
+            animal.move();
+            animal.doSpecialAction();
+            animal.eat();
+            animal.toString();
+        }
+/*
         // 개
         dog.makeSound();
         dog.move();
@@ -41,6 +47,6 @@ public class AnimalService {
         bird.move();
         bird.doSpecialAction();
         bird.eat();
-        System.out.println(bird.toString());
+        System.out.println(bird.toString());*/
     }
 }

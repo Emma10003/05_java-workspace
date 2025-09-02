@@ -1,3 +1,4 @@
+/*
 package edu.polymorphism.ex2.model;
 
 // 모든 것을 하나의 클래스에 넣은 나쁜 예시
@@ -81,3 +82,4 @@ public class 나쁜학교AllInOne {
 
 
 }
+*/
