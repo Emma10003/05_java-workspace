@@ -1,4 +1,4 @@
-package edu.polymorphism.pack1;
+package edu.polymorphism.pack1.model;
 
 /*
 Object 클래스
@@ -37,6 +37,17 @@ public class SmartPhone /* extends Object */{
         this.ap = ap;
     }
 
+    public void setDisplay(String display) {
+        this.display = display;
+    }
+
+    public void setNewsAgency(String newsAgency) {
+        this.newsAgency = newsAgency;
+    }
+
+    public void setAp(String ap) {
+        this.ap = ap;
+    }
 
     public String getDisplay() {
         return display;
