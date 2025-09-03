@@ -1,7 +1,7 @@
 package edu.inheritance.ex2;
 
 /**
- * 교통수단 클래스 상속 실습 문제
+ * 교통수단 클래스 상속.txt 실습 문제
  *
  * Vehicle 부모 클래스와 Car, Motorcycle, Bicycle 자식 클래스들을 활용하여
  * 상속의 개념과 메소드 오버라이딩을 연습합니다.
@@ -107,10 +107,10 @@ public class VehicleInheritanceRun {
         motorcycle1.putOnHelmet();
 
 
-        // ============== 문제 8: 상속 관계 확인 ==============
+        // ============== 문제 8: 상속.txt 관계 확인 ==============
         // instanceof 연산자를 사용하여 각 객체가 Vehicle의 인스턴스인지 확인하세요.
 
-        System.out.println("\n=== 상속 관계 확인 ===");
+        System.out.println("\n=== 상속.txt 관계 확인 ===");
         // 여기에 instanceof 확인 코드 작성
         // 예: System.out.println("car1은 Vehicle의 인스턴스입니다: " + (car1 instanceof Vehicle));
         System.out.println("car1은 Vehicle의 인스턴스입니다: " + (car1 instanceof Vehicle));

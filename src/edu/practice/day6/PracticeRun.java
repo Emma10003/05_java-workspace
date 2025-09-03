@@ -3,12 +3,12 @@ package edu.practice.day6;
 /**
  * PracticeRun 클래스는 수정할 내용이 없음!!
  *
- * Java 6일차 상속 실습문제 실행 클래스
+ * Java 6일차 상속.txt 실습문제 실행 클래스
  * 각 문제의 주석을 해제하고 실행하세요
  */
 public class PracticeRun {
     public static void main(String[] args) {
-        System.out.println("=== Java 6일차 상속 실습문제 실행 ===");
+        System.out.println("=== Java 6일차 상속.txt 실습문제 실행 ===");
 
         // 문제 1: NaverService 부모 클래스
         // testPractice1();
@@ -87,7 +87,7 @@ public class PracticeRun {
     }
 
     public static void testAll() {
-        System.out.println("\n=== 전체 테스트: 상속 관계 확인 ===");
+        System.out.println("\n=== 전체 테스트: 상속.txt 관계 확인 ===");
 
         NaverShopping shopping = new NaverShopping("네이버쇼핑", "shopper01", "쇼핑러버", 5, 50000, 3);
         NaverBlog blog = new NaverBlog("네이버블로그", "blogger01", "일상기록가", 8, 150, 5000);
