@@ -55,5 +55,14 @@ public abstract class Member {
     // 비추상 클래스에 추상 메서드가 있습니다 -> public 과 class 사이에 abstract가 없다!
     // = 자식클래스에서 필수로 작성해야 한다는 표기가 존재하지 않는데 메서드에 abstract 를 쓴다고 해서 발생하는 에러.
     public abstract double 할인율();
-
+    public abstract void 쿠폰과혜택();
+    // 일반Member = 보유하고 있는 쿠폰과 혜택이 존재하지 않습니다.
+    // 구독 서비스에 따라 쿠폰과 혜택을 받으실 수 있습니다.
+    
+    // 프리미엄Member = 현재 ㅇㅇㅇ 쿠폰을 보유하고 있습니다.
+    // 아쉽게도 혜택은 존재하지 않습니다~ㅠ
+    // VIP로 구독 업그레이드 하기
+    
+    // VIPMember = 현재 ㅇㅇㅇ 쿠폰과 ㅇㅇㅇ 혜택 이용 가능합니다.
+    // 를 MemberService에서 회원.쿠폰과혜택()으로 확인하기
 }
