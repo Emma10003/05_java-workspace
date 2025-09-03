@@ -1,9 +1,6 @@
 package edu.practice.day7.run;
 
-import edu.practice.day7.model.KakaoMap;
-import edu.practice.day7.model.KakaoPay;
-import edu.practice.day7.model.KakaoService;
-import edu.practice.day7.model.KakaoTalk;
+import edu.practice.day7.model.*;
 
 /**
  * Java 7일차 상속.txt, 추상화, 다형성 실습문제 실행 클래스
@@ -19,10 +16,10 @@ public class PracticeRun {
         // testKakaoMap();
 
         // 다형성 테스트
-        // testPolymorphism();
+        testPolymorphism();
 
         // 추상 클래스 테스트
-        // testAbstractClass();
+        testAbstractClass();
     }
 
     public static void testKakaoTalk() {
@@ -73,7 +70,7 @@ public class PracticeRun {
         kakaoMap.findRoute("강남역", "홍대입구");
         kakaoMap.sendNotification("목적지에 도착했습니다.");
         kakaoMap.performSpecialAction();
-        // kakaoMap.updateLocation("롯데월드");
+        kakaoMap.updateLocation("롯데월드");
         kakaoMap.stopService();
         kakaoMap.logout();
     }

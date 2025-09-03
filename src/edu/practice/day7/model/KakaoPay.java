@@ -7,12 +7,16 @@ public class KakaoPay extends KakaoService {
 
     // 생성자
     public KakaoPay() {
+        // 기본 페이 세팅값
+        super();
+        this.balance = 0;
+        this.bankAccount = "";
     }
     public KakaoPay(String serviceName, String userId, String userNickname) {
-        super(serviceName, userId, userNickname, true);
+        super(serviceName, userId, userNickname);
     }
     public KakaoPay(String serviceName, String userId, String userNickname,  int balance, String bankAccount) {
-        super(serviceName, userId, userNickname, true);
+        super(serviceName, userId, userNickname);
         this.balance = balance;
         this.bankAccount = bankAccount;
     }
@@ -45,6 +49,11 @@ public class KakaoPay extends KakaoService {
         System.out.println("[카카오페이 알림] " + message);
     }
 
+    @Override
+    public void receiveNotifications(String message) {
+        System.out.println("[카카오페이에서 알림 수신] " + message);
+    }
+
 
     // 추상메서드
     @Override
@@ -58,11 +67,13 @@ public class KakaoPay extends KakaoService {
     }
     @Override
     public String getServiceType() {
-        return "";
+        return "PAYMENT";
     }
     @Override
     public void performSpecialAction() {
-
+        // 함수별 or 기능들을 모두 추가
+        System.out.println("카카오페이를 시작합니다. 간편결제 서비스가 준비되었습니다.");
+        System.out.println("현재 잔액: " + getBalance() + "원");
     }
     
     // 고유메서드

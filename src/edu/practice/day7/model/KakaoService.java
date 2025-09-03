@@ -13,11 +13,11 @@ public abstract class KakaoService {
     // 생성자
     public KakaoService() {
     }
-    public KakaoService(String serviceName, String userId, String userNickname, boolean isLoggedIn) {
+    public KakaoService(String serviceName, String userId, String userNickname) {
         this.serviceName = serviceName;
         this.userId = userId;
         this.userNickname = userNickname;
-        this.isLoggedIn = isLoggedIn;
+        this.isLoggedIn = false;
     }
 
     // getter, setter
@@ -71,4 +71,5 @@ public abstract class KakaoService {
     public abstract String getServiceType();
     public abstract void performSpecialAction();
     public abstract void sendNotification(String message);
+    public abstract void receiveNotifications(String message);
 }

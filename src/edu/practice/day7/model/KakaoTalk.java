@@ -7,12 +7,15 @@ public class KakaoTalk extends KakaoService {
 
     // 생성자
     public KakaoTalk() {
+        super();
+        this.friendCount = 0;
+        this.isOnline = true;
     }
     public KakaoTalk(String serviceName, String userId, String userNickname) {
-        super(serviceName, userId, userNickname, true);
+        super(serviceName, userId, userNickname);
     }
     public KakaoTalk(String serviceName, String userId, String userNickname, int friendCount, boolean isOnline) {
-        super(serviceName, userId, userNickname, true);
+        super(serviceName, userId, userNickname);
         this.friendCount = friendCount;
         this.isOnline = isOnline;
     }
@@ -43,7 +46,12 @@ public class KakaoTalk extends KakaoService {
     public void sendNotification(String message) {
         System.out.println("[카카오톡 알림] " + message);
     }
-    
+
+    @Override
+    public void receiveNotifications(String message) {
+        System.out.println("[카카오톡에서 알림 수신] " + message);
+    }
+
 
     // 추상메서드
     @Override
@@ -62,12 +70,15 @@ public class KakaoTalk extends KakaoService {
 
     @Override
     public String getServiceType() {
-        return "PAYMENT";
+        return "TALK";
     }
 
     @Override
     public void performSpecialAction() {
+        System.out.println("메세지 전송 기능을 실행합니다.");
+        System.out.println("친구들과 실시간 채팅을 즐겨보세요.");
 
+        // 또는 아래 구현된 메서드들을 호출할 수 있음.
     }
 
 
