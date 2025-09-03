@@ -20,7 +20,7 @@ public class 일반Member extends Member {
 
     @Override
     public void 쿠폰과혜택() {
-        System.out.println(memberName + "님은 보유하신 쿠폰과 혜택이 존재하지 않습니다.");
+        System.out.println(getMemberName() + "님은 보유하신 쿠폰과 혜택이 존재하지 않습니다.");
         System.out.println("구독 서비스에 따라 쿠폰과 혜택을 받으실 수 있습니다.");
     }
 }

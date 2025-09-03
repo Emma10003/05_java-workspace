@@ -45,6 +45,7 @@ public class VIPMember extends Member {
 
     @Override
     public void 쿠폰과혜택() {
-        System.out.println(memberName + "님은 현재 " + 쿠폰 + " 쿠폰과 " + 혜택 + " 이용 가능합니다.");
+        System.out.println(getMemberName() + "님은 현재 " + get쿠폰() + "과 " + get혜택() + " 혜택 이용 가능합니다.");
     }
+
 }
