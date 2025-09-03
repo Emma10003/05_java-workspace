@@ -1,9 +1,15 @@
 package edu.polymorphism.pack3.ex1;
 
-/**
- * Meta플랫폼을 추상클래스로 변경 후
- * Facebook과 Instagram 에서 implements 없이 
- * post() 기능과 like() 기능을 사용할 수 있도록 추상메서드로 설정
+/*
+public interface 소셜미디어기능들(){}
+public class Meta플랫폼(){}
+
+추상메서드존재X                 부모클래스 + 인터페이스의 조합
+public class Instagram extends Meta플랫폼 implements 소셜미디어기능들 {}
+
+public abstract class Meta플랫폼 {}
+추상메서드존재O                부모클래스에 abstract 를 활용한 조합
+public class Instagram extends Meta플랫폼 {}
  */
 public abstract class Meta플랫폼 {
     protected String 플랫폼이름;

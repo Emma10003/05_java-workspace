@@ -6,7 +6,7 @@ package edu.polymorphism.pack3.ex1;
  *                     부모클래스와 인터페이스로 분리한 것.
  *                     나중에는 부모클래스에 필드명, 생성자, getter, setter, toString만 있을 것!
  */
-public class Instagram extends Meta플랫폼 {
+public class Instagram extends Meta플랫폼 /*implements 소셜미디어기능들*/ {
 
     public Instagram(String 유저아이디) {
         super("Instagram", 유저아이디);
