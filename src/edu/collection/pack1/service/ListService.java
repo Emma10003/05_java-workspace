@@ -3,6 +3,7 @@ package edu.collection.pack1.service;
 import edu.collection.pack1.model.Book;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -142,7 +143,8 @@ public class ListService {
      */
     public void bookManage(){
         // while 이용해서 도서 추가, 전체 조회, 종료
-        List<Book> bookList = new ArrayList<>();
+        // List<Book> bookList = new ArrayList<>();
+        List<Book> bookList = new LinkedList<>(); // 중간에 삽입/삭제가 무수히 많을 경우 주로 사용
         Scanner sc = new Scanner(System.in);
         int input = 0; // 추후 메뉴 번호를 입력받아 가지고 있을 공간의 명칭이 input
 
