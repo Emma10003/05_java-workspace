@@ -45,8 +45,8 @@ public class Book {
     // 그 중 대표적으로 가장 많이 사용하는 것이 toString.
     @Override
     public String toString() {
-        return "Book [title='" + title + '\'' +
-                ", writer='" + writer + '\'' +
-                ", price=" + price + ']';
+        return "Book [title: '" + title + '\'' +
+                ", writer: '" + writer + '\'' +
+                ", price: " + price + ']';
     }
 }

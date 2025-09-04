@@ -147,7 +147,51 @@ public class ListService {
         int input = 0; // 추후 메뉴 번호를 입력받아 가지고 있을 공간의 명칭이 input
 
         while(true){
+            System.out.println("""
+📖 도서관리시스템📖
+1️⃣. 추가
+2️⃣. 전체조회
+0️⃣. 종료
+                    """);
+            System.out.print("메뉴 번호 입력 ⏩ ");
+            input = sc.nextInt();
+            sc.nextLine(); // 스캐너에 남아있는 개행문자 제거 (자동으로 한줄 바꿈 버퍼 생성)
 
+            switch (input){
+                case 0:
+                    System.out.println("도서 프로그램을 종료합니다.");
+                    return;
+                case 1:
+                    System.out.println("도서를 추가합니다.");
+                    System.out.print("제목을 입력하세요: ");
+                    String title = sc.nextLine();
+                    System.out.print("저자를 입력하세요: ");
+                    String writer = sc.nextLine();
+                    System.out.print("가격을 입력하세요: ");
+                    int price = sc.nextInt();
+                    
+                    // List는 int String boolean 뿐만 아니라 모든 자료형을 담을 수 있음
+                    // 그런데 List<Book> ->  Book class(책 문서) 형태의 데이터들만 담을 수 있도록 목록 추가에 제약사항을 설정한 것
+                    bookList.add(new Book(title, writer, price)); // bookList 는 책제목, 저자, 가격 형태만 가능
+                    System.out.println("책이 추가되었습니다.");
+                    break;
+
+                case 2:
+                    // bookList .size() > 0 일 때만 조회되도록
+                    if(bookList.size() > 0){
+                        System.out.println("도서 목록을 모두 조회합니다.");
+                        // bookList 공간에 저장된 책 형태들을 조회하기
+                        // for문 다형성에서 작성했던 것 처럼 향상된 for문 활용하기
+                        for (Book book : bookList) System.out.println(book); // 코드가 한 줄이기 때문에 중괄호 생략
+                    } else {
+                        System.out.println("도서가 존재하지 않습니다.");
+                    }
+
+
+                    break;
+                default:
+                    System.out.println("번호를 잘못 입력하셨습니다.");
+            }
         }
     }
 }

@@ -82,6 +82,7 @@ public class ListPracticeRun {
         List에 제너릭을 추가해주지 않으면
         필요한 타입: String   제공된 타입: Object
         에러 발생.
+        => 왜?
         */
         System.out.println("제거된 요소: " + target);
     }
