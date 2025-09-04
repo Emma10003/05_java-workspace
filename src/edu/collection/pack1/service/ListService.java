@@ -1,7 +1,10 @@
 package edu.collection.pack1.service;
 
+import edu.collection.pack1.model.Book;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 // service.ListService => 폴더와 클래스 한 번에 만들기
 public class ListService {
@@ -115,6 +118,37 @@ public class ListService {
         // target 에는 strList 에서 제거되기 전에, 제거될 데이터의 값이 담겨진 후에 strList에서 해당 데이터가 제거됨
         System.out.println("제거된 요소: " + target); // 닭갈비
         System.out.println(strList);                 // [막국수, 양념치킨, 보쌈]
+    }
+
+    /**
+     * List : 목록에 관련된 컬렉션
+     * ArrayList : 배열 형태의 리스트
+     *      - 장점 : 검색이 빠름
+     *      - 단점 : 중간 삽입, 제거가 느림
+     *      - 사용 예시: 학생 성적 관리  (조회가 많은 경우)
+     *                   게시판   목록  (순서대로 보기)
+     *                   설정 값들 저장 (가끔 수정하는 경우)
+     *                   그 외 대부분의 일반적인 상황에도 거의 ArrayList 사용.
+     * LinkedList : 서로 연결된 링크 형태의 리스트 (기차)
+     *      - 장점 : 중간 삽입, 제거가 빠름
+     *      - 단점 : 검색이 느림
+     *      - 사용 예시: 음악 플레이리스트  (중간에 곡 삽입 / 삭제)
+     *                   실행 취소 기능    (앞뒤로 이동)
+     *                   대기열 관리       (앞에서 빼고 뒤에서 넣기)
+     *
+     * 대부분의 경우에는 ArrayList 를 주로 사용.
+     * - LinkedList는 중간에 삽입 / 삭제가 정말 많을 때만 사용하거나,
+     *                확실한 이유가 있을 때만 사용.
+     */
+    public void bookManage(){
+        // while 이용해서 도서 추가, 전체 조회, 종료
+        List<Book> bookList = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        int input = 0; // 추후 메뉴 번호를 입력받아 가지고 있을 공간의 명칭이 input
+
+        while(true){
+
+        }
     }
 }
 
