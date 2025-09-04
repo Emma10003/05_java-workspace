@@ -1,4 +1,4 @@
-package edu.collection.model;
+package edu.collection.pack1.model;
 // 클래스 생성 시 model.Book 와 같은 형식으로 작성하면 model이라는 패키지와 Book 클래스가 동시에 생성됨.
 public class Book {
     // 필드 (= 속성, 인스턴스 변수)
