@@ -1,5 +1,6 @@
 package edu.exception.pack1.ex;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PracticeException1 {
@@ -33,6 +34,11 @@ public class PracticeException1 {
         } catch(ArithmeticException e) {
             System.out.println("0으로 숫자를 나눌 수 없습니다.");
             // 다른 방법을 시도하시겠습니까? + 나 * 와 같은 행동을 유도할 수 있음.
+        } catch(InputMismatchException e) {
+            System.out.println("숫자 데이터만 가능합니다.");
+        } catch (Exception e) {
+            System.out.println("개발자가 예기치 못한 문제가 발생했습니다.");
+            System.out.println("회사에 문제 보고서 전달하기 YES / NO");
         } finally {
             System.out.println("프로그램을 종료합니다.");
         }
