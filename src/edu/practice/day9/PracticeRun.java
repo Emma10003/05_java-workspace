@@ -66,7 +66,7 @@ public class PracticeRun {
         mpm.displayAllMembers();
     }
 
-
+/*
     public void informationManagementSystem() {
         System.out.println("\n=== 종합 정보 관리 시스템 시뮬레이션 ===");
 
@@ -134,5 +134,5 @@ public class PracticeRun {
 
 
         System.out.println("\n통합 시스템 운영 완료");
-    }
+    }*/
 }
