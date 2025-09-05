@@ -51,7 +51,13 @@ public class MemberPointManager {
         }
     }
 
+    /**
+     * 전체 회원 포인트 조회 메서드
+     */
     public void displayAllMembers(){
-
+        System.out.println("--- 전체 회원 포인트 정보 ---");
+        for(Map.Entry<String, Integer> entry : pointMap.entrySet()) {
+            System.out.printf("ID: %s, 포인트: %d\n", entry.getKey(), entry.getValue());
+        }
     }
 }
