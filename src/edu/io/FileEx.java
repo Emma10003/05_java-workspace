@@ -86,6 +86,8 @@ public class FileEx {
         File file1 = new File("폴더경로/파일이름.확장자명");
         File file2 = new File("폴더경로", "/파일이름.확장자이름");
 
+
+
         // 현대 버전 - Windows, MacBook, Linux 를 자바 코드에서 운영체제를 읽고 콤마(,) 사이 중간을
         //            알아서 윈도우, 맥북, 리눅스에 각각 필요한 형태로 슬래시(/) 를 작성
 
@@ -140,4 +142,68 @@ public class FileEx {
         Collections.sort(list); // 정렬 도구
         Collections.reverse(list); // 정렬 뒤집기 도구
     }
+
+    /*
+        Path 클래스 주요 메서드 ----------------------------------------------------------------------------
+        Paths.get();  : 1개 이상의 문자열 작성
+                        콤마(,) 를 이용해 여러 경로 요소를 조합 가능
+        Java11 버전부터는 Path.of() 사용 권장
+        
+        Path.of()     : 1개 이상의 문자열 작성
+                        더 간결한 문법 사용
+
+        Path.getParent()   = C://파일경로1번/파일경로2번/파일경로3번/
+                             파일명.txt 전의 모든 경로를 가져오는 기능.
+        Path.getFileName() = 파일 경로 이외에 파일명.확장자명 만 가지고 오는 기능.
+
+        Path.toAbsolutePath() : 절대경로 반환
+
+        Path.getNameCount()   : 파일 위치에 도달하기까지 몇 개의 슬래시(/)를 거치는지 - 경로 개수 세기
+        int nameCount = Path.getNameCount();  // 파일명 전 까지 슬래시 개수로 폴더 개수 가져옴.
+        Path.getName(1) : index 상 파일경로 1번이 들어옴
+        Path.getName(0) : index 상       C:   가 들어옴
+
+
+
+        
+        File 클래스 주요 메서드 ----------------------------------------------------------------------------
+        파일 복사/이동/삭제
+        Files.copy(Path.of("원본파일경로/원본파일명.확장자명"), Path.of("복사해놓을파일경로/복사본파일명.확장자명"));
+        Files.copy(Path.of("원본파일경로/원본파일명.확장자명"), Path.of("복사해놓을파일경로/복사본파일명.확장자명"), StandardCopyOption.REPLACE_EXISTING);
+            => StandardCopyOption.REPLACE_EXISTING : 복사할 때, 덮어쓰기 형태로 복사.
+
+        Files.move(Path.of("원본파일경로/원본파일명.확장자명"), Path.of("이동해놓을파일경로/(선택적으로변경)파일명.확장자명"));
+        Files.move(Path.of("원본파일경로/원본파일명.확장자명"), Path.of("복사해놓을파일경로/(선택적으로변경)복사본파일명.확장자명"), StandardCopyOption.REPLACE_EXISTING);
+            =>  StandardCopyOption.REPLACE_EXISTING : 파일 이동할 때, 덮어쓰기 형태로 파일 이동.
+
+        Files.delete(Path.of("경로/파일명.확장자명"));               -> 파일 삭제하는데, 삭제 못하면 예외 발생.
+        Files.deleteIfExists(Path.of("경로/파일명.확장자명"));       -> 파일 삭제하는데, 존재하지 않아도 예외 발생하지 않음.
+                                                                      파일이 존재하는데 다른 곳에서 파일을 사용 중일 경우에는 예외 발생.
+
+        Path path = Path.of("C://파일경로1번/파일경로2번/파일경로3번/파일명.txt");
+        Files.createDirectories(path.getParent());
+             .createDirectories()                   -> 파일명.txt 전에 존재하는 모든 파일 경로가 없으면 생성
+
+
+
+
+        Streaming = 네트워크를 통해 데이터—특히 오디오나 비디오 같은 미디어—를 실시간으로 받아오는 기법
+                    전송하고 재생하는 방식
+        Stream    = 데이터의 연속적인 흐름을 나타내는 개념
+                    파일, 네트워크, 메모리 등에서 데이터를 순차적으로 읽고 쓸 때 사용
+
+        Streamer = 인터넷을 통해 데이터의 연속적인 흐름을 이용해서 영상/음성 데이터를 실시간으로 흘려보내는 사람
+        Viewer    = 스트리머의 방송을 보는 사람들
+
+        시청자가 스트리머의 방송을 보던 중 갑자기 화면이 정지되더니 '버퍼링 중입니다' 라는 문구 나오는 경우
+        '버퍼링 중입니다' = 데이터를 가져오는 중입니다.
+        Buffer : 데이터를 임시로 저장하는 메모리 영역
+                 파일에서는 BufferedReader / BufferedWriter 로 파일 읽기/쓰기를 구현
+
+     */
+
+    public void method(){
+
+    }
+    
 }
