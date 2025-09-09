@@ -17,13 +17,14 @@ public class FilePracticeService2 {
         }
 
         // 폴더의 존재 확인
+        System.out.println("path: " + path);
         System.out.println("path.getParent(): " + path.getParent());
         if(path.getParent() != null) {
             if(!Files.exists(path.getParent())) {
                 System.out.println("폴더가 존재하지 않습니다. 폴더명을 확인해주세요.");
                 return;
             }
-            if(!Files.isDirectory(path)) {
+            if(!Files.isDirectory(path.getParent())) {
                 System.out.println("폴더가 아니고, 파일 형태 입니다.");
                 return;
             }
@@ -36,6 +37,8 @@ public class FilePracticeService2 {
             System.out.println("파일이 존재하지 않습니다.");
             return;
         }
+
+
 
         try {
             String content = Files.readString(path);
