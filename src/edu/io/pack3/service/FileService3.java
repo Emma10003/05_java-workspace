@@ -1,10 +1,9 @@
 package edu.io.pack3.service;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.nio.Buffer;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class FileService3 {
     public void 고전방식(){
@@ -38,4 +37,42 @@ public class FileService3 {
             }
         }
     }
+
+
+    public void 현대방식(){ // 훨씬 더 코드가 간단하다~
+        Path path = Path.of("files", "파일2.txt"); // 폴더와 파일을 구분, 알아서 / 가 붙음
+
+        if(!Files.exists(path)) {
+            System.out.println("파일 없음");
+            return;
+        }
+
+        try {
+            String content = Files.readString(path);
+            System.out.println(content);
+            // 파일을 다 읽으면 알아서 닫히므로 닫는다, 안 닫는다 설정할 필요가 없음.
+        } catch (IOException e) {
+            System.out.println("파일을 읽는 도중 발생하는 문제에 대해 처리할 로직을 작성하는 곳");
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
