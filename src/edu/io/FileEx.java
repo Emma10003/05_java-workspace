@@ -3,6 +3,8 @@ package edu.io;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class FileEx {
     /*
@@ -109,5 +111,33 @@ public class FileEx {
         Path 상대경로2 = Path.of("src","file.txt"); // java_basic 폴더에서 src 폴더 아래에 위치한 file.txt
         Path 상대경로3 = Path.of("..","file.txt"); // java_basic 폴더에서 폴더를 감싸고 있는 java_workspace 폴더를 가리킴
         Path 상대경로4 = Path.of(".", "path1", "file.txt"); // 현재 폴더에서 path1 이라는 폴더 안에 존재하는 file.txt
+    }
+
+
+    /*
+    유틸리티 클래스 및 메서드 기능
+    유틸리티 : 편리한 도구들의 모음집
+     */
+    public void utilityMethod(){
+        // 클래스 기반 유틸리티
+        try {
+            // File 에는 존재하지 않지만 Files 에는 존재하는 기능들
+            Files.copy(Path.of("원본"), Path.of("사본"));
+            Files.move(Path.of("원본"), Path.of("사본"));
+            Files.delete(Path.of("사본"));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // 메서드 유틸리티
+        double 결과1 = Math.max(10, 20);
+        double 결과2 = Math.sqrt(10); // 제곱근
+        double 결과3 = Math.random();
+
+        ArrayList list = new ArrayList();
+        // 정렬 뒤집기
+        Collections.sort(list); // 정렬 도구
+        Collections.reverse(list); // 정렬 뒤집기 도구
     }
 }
