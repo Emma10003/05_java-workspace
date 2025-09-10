@@ -195,4 +195,24 @@ public class 중복된_파일_폴더명칭_Service {
             throw new RuntimeException(e);
         }
     }
+
+    // C 드라이브 아래에 kakaoTalk 이라는 폴더에 사진을 저장하기
+    // 사진을 저장할 때는 반드시
+    // KakaoTalk_현재시간.jpg 형태로 저장할 것
+    // String kakaoName
+    public void kakaoSave(String imgUrl){
+        String kakaoName = "KakaoTalk_" + System.currentTimeMillis() + ".jpg"; // 현재시간으로 저장하는 게 요새 트렌드
+        Path path = Path.of("C:", "kakaoTalk", kakaoName);
+
+        try {
+            Files.createDirectories(path.getParent());
+            URL url = new URL(imgUrl);
+            InputStream in = url.openStream();
+            Files.copy(in, path);
+            in.close();
+            System.out.println("파일 저장이 완료되었습니다.");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
