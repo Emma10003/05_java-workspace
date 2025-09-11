@@ -61,8 +61,10 @@ public class LoginLog {
         System.out.println("now: " + now);
     }
     /*
+    // 파일이름 다르게 설정할 때 자주 사용
     System.currentTimeMillis() : 1970년 01월 01일 00 분 00초 부터 흐른 시간을 숫자로 표현
-    
+
+    // 로그인시간, 채팅 보낸 시간을 소비자에게 보여주고 기록할 때 주로 사용
     LocalDateTime.now() : 현재시간을 문자열 형태로 출력
     
     DateTimeFormatter.ofPattern("회사에서 출력하기 원하는 시간 형태") : 현재시간 출력 형태가 마음에 들지 않을 때
