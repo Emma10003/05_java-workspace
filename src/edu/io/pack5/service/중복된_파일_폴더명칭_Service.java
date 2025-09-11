@@ -201,7 +201,7 @@ public class 중복된_파일_폴더명칭_Service {
     // KakaoTalk_현재시간.jpg 형태로 저장할 것
     // String kakaoName
     public void kakaoSave(String imgUrl){
-        String kakaoName = "KakaoTalk_" + System.currentTimeMillis() + ".jpg"; // 현재시간으로 저장하는 게 요새 트렌드
+        String kakaoName = "KakaoTalk_" + System.currentTimeMillis() + ".jpg"; // 현재시간으로 저장하는 게 ㅋ요새 트렌드
         Path path = Path.of("C:", "kakaoTalk", kakaoName);
 
         try {
