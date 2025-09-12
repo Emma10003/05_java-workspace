@@ -44,6 +44,7 @@ public class StringBuilderService {
             // 파일 아래에 지속적으로 추가되지만,
             // saveBook 을 여러 번 실행하면
             // 이전 데이터에 새로운 데이터가 누적되는 것이 아니라 초기화된 상태로 새로운 데이터가 저장됨.
+            // -> StandardOpenOption 을 설정하지 않았기 때문!
             // 이어쓰기인지, 매번 새로운 파일을 만드는지 - 파일을 만드는 목적을 확인하고 옵션 설정할 것!
 
             System.out.println("도서 목록이 저장되었습니다: " + bookFile.getFileName());
@@ -62,9 +63,11 @@ public class StringBuilderService {
         StringBuilder gradeData = new StringBuilder();
 
         try {
+            // 1. 폴더 확인 및 생성
             Files.createDirectories(gradeDir);
+            System.out.println(gradeDir + " 폴더 생성되었습니다.");
+            System.out.println("=== 학생 성적 입력 (종료를 입력하면 저장됩니다) ===");
 
-                System.out.println("=== 학생 성적 입력 (종료를 입력하면 저장됩니다) ===");
             while (true) {
                 // 입력받기
                 System.out.print("이름: ");
@@ -76,21 +79,24 @@ public class StringBuilderService {
 
                 System.out.print("국어: ");
                 int kor = sc.nextInt();
+                sc.nextLine();
                 System.out.print("영어: ");
                 int eng = sc.nextInt();
+                sc.nextLine();
                 System.out.print("수학: ");
                 int math = sc.nextInt();
+                sc.nextLine();
+                
                 double average = (kor + eng + math) / 3.0;
 
                 gradeData.append("이름: " + name + ", 국어: " + kor + ", 영어: " + eng +
                         ", 수학: " + math + ", 평균: " + average + "\n");
-
-
             }
-
-            Files.writeString(gradeFile, gradeData);
+            
+            // 모든 입력이 끝나고 '종료'를 작성했다면
+            Files.writeString(gradeFile, gradeData); // gradeData.toString() 도 가능
             System.out.println("오늘 성적표가 작성되었습니다: " + gradeFile.getFileName());
-
+            
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -103,11 +109,11 @@ public class StringBuilderService {
         Path accountFile = Path.of("household", "account_book.txt");
         String timestamp = getCurrentTime();
         StringBuilder accountData = new StringBuilder();
+        System.out.println("=== 가계부 내역 입력 (끝 입력 시 저장됩니다) ===");
 
         try {
             Files.createDirectories(householdDir);
 
-                System.out.println("=== 가계부 내역 입력 (끝 입력 시 저장됩니다) ===");
             while(true) {
                 // 입력받기
                 System.out.print("항목: ");
@@ -117,15 +123,13 @@ public class StringBuilderService {
                     break;
                 }
 
-                System.out.println("금액: ");
+                System.out.print("금액: ");
                 int price = sc.nextInt();
-                sc.nextLine();
-                System.out.println("수입/지출: ");
+                sc.nextLine(); // 숫자나 소수자리는 작성한 뒤에 줄바꿈 처리가 되기 때문에 nextLine()으로 버퍼 처리
+                System.out.print("수입/지출: ");
                 String whetherIncome = sc.nextLine();
 
-                accountData.append(timestamp + " - " + cate + ": " + price + "원" + "(" + whetherIncome + ")\n");
-
-
+                accountData.append(timestamp + " - " + cate + ": " + price + "원" + " (" + whetherIncome + ")\n");
             }
 
             Files.writeString(accountFile, accountData, StandardOpenOption.CREATE,  StandardOpenOption.APPEND);
@@ -140,7 +144,7 @@ public class StringBuilderService {
 
     }
 
-    private String getCurrentTime() {
+    public String getCurrentTime() {
         return LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 }
