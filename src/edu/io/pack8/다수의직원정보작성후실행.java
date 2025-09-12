@@ -33,7 +33,7 @@ public class 다수의직원정보작성후실행 {
             
         }
 
-        // 종료를 입력하면
+        // 종료를 입력하면 파일 저장
         Path path = Path.of("files", "employee.txt");
         try {
             Files.createDirectories(path.getParent());
@@ -41,7 +41,7 @@ public class 다수의직원정보작성후실행 {
 
             System.out.println("파일이 성공적으로 생성되었습니다: " + path);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e); 
         }
     }
 }
