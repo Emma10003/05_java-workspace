@@ -1,5 +1,0 @@
-이름: Emma
- 전화번호: 010-9999-9999
- 이메일: Emma@email.com
- 주소: Seodaemun-gu, Seoul
-
